@@ -1,6 +1,6 @@
 import './Cuisine.css';
 import { motion } from 'framer-motion';
-import { Link,useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import RecipeCard from '../components/RecipeCard';
 
@@ -11,7 +11,7 @@ const Cuisine = () => {
     console.log(params);
 
     const getCuisine = async (name) => {
-        const API_KEY = '0790ddd262c24c55825e9141d9a472d9';
+        const API_KEY = '77a43ba86d4645e4be6a185314732f24';
         const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${name}`);
         const recipe = await data.json();
         setCuisine(recipe.results);
