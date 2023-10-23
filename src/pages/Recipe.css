@@ -23,3 +23,30 @@
 {
     background-color: #202020;
 }
+.recipe-right-main
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 30px;
+}
+.summary h2 
+{
+    margin-bottom: 20px;
+}
+.instructions h2 
+{
+    margin-bottom: 20px;
+}
+.steps 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.step 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

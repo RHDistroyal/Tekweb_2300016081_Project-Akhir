@@ -30,7 +30,6 @@ const Popular = () => {
         getPopular();
     },[])
 
-    if(popular === undefined) return <h1>Failed To Fetch</h1>
 
     return (
         <div className="popular-container">

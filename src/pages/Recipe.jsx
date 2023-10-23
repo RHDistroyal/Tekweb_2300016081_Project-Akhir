@@ -48,6 +48,12 @@ const Recipe = () => {
                             disabled={active === 'ingredients' ? true : false}>
                             ingredients
                         </Button>
+                        <Button 
+                            variant='contained'
+                            onClick={() => handleClick('steps')}
+                            disabled={active === 'steps' ? true : false}>
+                                Steps
+                        </Button>
                     </div>
                     {active === 'summary' && 
                         <div className="recipe-right-main">
@@ -68,7 +74,21 @@ const Recipe = () => {
                             ))
                         )   
                     }
-                </div>
+                    {
+                        active === 'steps' && (
+                            <div className="steps">
+                                <h1>Steps</h1>
+                                {details.analyzedInstructions[0].steps.map((data) => (
+                                    <div className="step" key={data.step}>
+                                        <h2>Step - {data.number}</h2>
+                                        <p>{data.step}</p>
+                                        <h4>Ingredients - {data.ingredients[0].name}</h4>
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    }
+                </div>     
             </div>
         </div>
     )
