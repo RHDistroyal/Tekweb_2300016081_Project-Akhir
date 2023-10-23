@@ -22,7 +22,7 @@ const Recipe = () => {
     return (
         <div className="recipe-container">
             <h1>RECIPE CONTAINER</h1>
-            {/* <p>{details.title}</p> */}
+            <p>{details.title}</p>
         </div>
     )
 }
