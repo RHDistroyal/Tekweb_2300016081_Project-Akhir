@@ -5,20 +5,20 @@ import Category from "../components/Category";
 import Search from "../components/Search";
 import Searched from "./Searched";
 import Recipe from "./Recipe";
+import Header from "../components/Header";
 
 const Pages = () => {
     return (
         <Router>
+            <Header />
             <div className="pages-container">
-                <Search />
-                <Category />
                 <Routes>
-                    <Route path="/" element={<Home />}></Route>
-                    <Route path="/cuisine/:type" element={<Cuisine />}></Route>
-                    <Route path="/searched/:search" element={<Searched />}></Route>
+                    <Route path="/" element={[<Search />, <Category />, <Home />]}></Route>
+                    <Route path="/cuisine/:type" element={[<Search />, <Category />, <Cuisine />]}></Route>
+                    <Route path="/searched/:search" element={[<Search />, <Category />, <Searched />]}></Route>
                     <Route path="/searched/:search/recipe/:name" element={<Recipe />}></Route>
                     <Route path="/cuisine/:type/recipe/:name" element={<Recipe />}></Route>
-
+                    <Route path="recipe/:name" element={<Recipe />}></Route>
                 </Routes>
             </div>
         </Router>

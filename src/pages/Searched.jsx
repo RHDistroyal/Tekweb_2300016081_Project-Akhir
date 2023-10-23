@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RecipeCard from "../components/RecipeCard";
-import './Searched.css'
+import './Searched.css';
+import { API_KEY } from "../assets/API_KEY";
 
 const Searched = () => {
 
@@ -9,7 +10,6 @@ const Searched = () => {
     const params = useParams();
 
     const getSearched = async (name) => {
-        const API_KEY = '77a43ba86d4645e4be6a185314732f24';
         const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${name}`);
         const recipes = await data.json();
         setSearchedRecipes(recipes.results);
