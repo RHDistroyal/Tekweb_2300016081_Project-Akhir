@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import RecipeCard from "../components/RecipeCard";
 import './Searched.css';
 import { API_KEY } from "../assets/API_KEY";
+import { Skeleton } from "@mui/material";
 
 const Searched = () => {
 
@@ -19,6 +20,23 @@ const Searched = () => {
     useEffect(() => {
         getSearched(params.search);
     },[params.search])
+
+    if(searchedRecipes.length === 0) {
+        const number = [1,2,3,4,5,6,7,8,9,10];
+        return (
+        <div className="cuisine-skeleton">
+        {
+            number.map((data) => (
+                <Skeleton 
+                    variant="rounded"
+                    width={300}
+                    height={200}
+                    animation='wave'
+                    key={data}
+                />))
+        }
+        </div> 
+    )}
 
     return (
         <div className="searched-container">

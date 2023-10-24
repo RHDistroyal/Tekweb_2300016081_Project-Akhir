@@ -1,4 +1,4 @@
-import Home from "./home";
+import Home from "./Home";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cuisine from "./Cuisine";
 import Category from "../components/Category";
