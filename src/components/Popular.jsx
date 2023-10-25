@@ -30,7 +30,6 @@ const Popular = () => {
         getPopular();
     },[])
 
-
     return (
         <div className="popular-container">
             <h1>Popular </h1>
