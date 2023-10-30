@@ -50,3 +50,32 @@
     flex-direction: column;
     gap: 10px;
 }
+button:hover 
+{
+    background-color: #202020;
+}
+.recipe-shimmer-container
+{
+    display: flex;
+    gap: 20px;
+}
+.recipe-shimmer-left 
+{
+    width: 40%;
+} 
+.recipe-shimmer-right 
+{
+    width: 60%;
+    margin-top: 15px;
+}
+.btn-shimmer-right 
+{
+    display: flex;
+    gap: 30px;
+}
+.text-container-shimmer
+{
+    display: flex;
+    flex-direction: column;
+    gap: -20px;
+}

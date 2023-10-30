@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Recipe.css';
 import { useParams } from 'react-router-dom';
 import { API_KEY } from '../assets/API_KEY';
-import { Button } from '@mui/material';
+import { Button, Skeleton } from '@mui/material';
 
 const Recipe = () => {
 
@@ -25,14 +25,48 @@ const Recipe = () => {
         setActive(status)
     }
 
-    if(details === undefined) return <h1>Shimmer</h1>
+    if(details === undefined) {
+        return (
+            <div className="recipe-shimmer-container">
+                <div className="recipe-shimmer-left">
+                    <Skeleton variant='text' sx={{fontSize: '3rem'}} animation='wave' />
+                    <Skeleton variant='rectangular' animation='wave' height={300} width={500} />
+                </div>
+                <div className="recipe-shimmer-right">
+                    <div className="btn-shimmer-right">
+                        <Skeleton variant='rounded' animation='wave' height={35} width={120} />
+                        <Skeleton variant='rounded' animation='wave' height={35} width={120} />
+                        <Skeleton variant='rounded' animation='wave' height={35} width={120} />
+                    </div>
+                    <div className="shimmer-content-right">
+                        <Skeleton variant='text' sx={{fontSize:'2.5rem'}} animation='wave' />
+                        <div className="text-container-shimmer">
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        <Skeleton variant='text' sx={{fontSize:'1.5rem'}} animation='wave' />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="recipe-container-main">
-            <h1>{details.title}</h1>
+            <h1>{details?.title}</h1>
             <div className="recipe-container">
                 <div className="recipe-container-left">
-                    <img src={details.image} className='recipe-imgs' />
+                    <img src={details?.image} className='recipe-imgs' />
                 </div>
                 <div className="recipe-container-right">
                     <div className="btn-container">
@@ -59,17 +93,17 @@ const Recipe = () => {
                         <div className="recipe-right-main">
                             <div className="summary">
                                <h2>Summary</h2>
-                               <p dangerouslySetInnerHTML={{__html: details.summary}}></p>
+                               <p dangerouslySetInnerHTML={{__html: details?.summary}}></p>
                              </div>
                             <div className="instructions">
                                <h2>Instructions</h2>
-                               <p dangerouslySetInnerHTML={{__html: details.instructions}}></p>
+                               <p dangerouslySetInnerHTML={{__html: details?.instructions}}></p>
                             </div>
                         </div>
                     }
                     {
                         active === 'ingredients' && (
-                            details.analyzedInstructions[0].steps[0].ingredients.map((data) => (
+                            details?.analyzedInstructions[0]?.steps[0]?.ingredients.map((data) => (
                                 <li>{data.name}</li>
                             ))
                         )   
@@ -78,11 +112,11 @@ const Recipe = () => {
                         active === 'steps' && (
                             <div className="steps">
                                 <h1>Steps</h1>
-                                {details.analyzedInstructions[0].steps.map((data) => (
-                                    <div className="step" key={data.step}>
-                                        <h2>Step - {data.number}</h2>
-                                        <p>{data.step}</p>
-                                        <h4>Ingredients - {data.ingredients[0].name}</h4>
+                                {details?.analyzedInstructions[0]?.steps.map((data) => (
+                                    <div className="step" key={data?.step}>
+                                        <h2>Step - {data?.number}</h2>
+                                        <p>{data?.step}</p>
+                                        <h4>Ingredients - {data?.ingredients[0]?.name}</h4>
                                     </div>
                                 ))}
                             </div>
