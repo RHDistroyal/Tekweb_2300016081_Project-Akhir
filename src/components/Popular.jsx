@@ -33,7 +33,7 @@ const Popular = () => {
     if(popular.length === 0) {
         const number = [1,2,3,4,5,6,7,8,9,10];
         return (
-            <Splide options={{
+            <Splide options= {{
                 perPage: 4,
                 pagination: false,
                 gap: '2rem'
