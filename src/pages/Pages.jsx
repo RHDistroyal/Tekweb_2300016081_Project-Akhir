@@ -8,6 +8,7 @@ import Recipe from "./Recipe";
 import Header from "../components/Header";
 
 const Pages = () => {
+
     return (
         <Router>
             <Header />

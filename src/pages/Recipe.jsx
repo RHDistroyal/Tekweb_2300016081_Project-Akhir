@@ -103,8 +103,13 @@ const Recipe = () => {
                     }
                     {
                         active === 'ingredients' && (
-                            details?.analyzedInstructions[0]?.steps[0]?.ingredients.map((data) => (
-                                <li>{data.name}</li>
+                            details?.extendedIngredients.map((data) => (
+                                <div className="ingredient-bar" key={data?.id}>
+                                    <h3 className='ingredients-h3'>
+                                        <p>{data?.name}</p>
+                                        <p> {data?.amount} grams</p>
+                                    </h3>
+                                </div>
                             ))
                         )   
                     }

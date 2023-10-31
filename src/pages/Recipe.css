@@ -50,10 +50,6 @@
     flex-direction: column;
     gap: 10px;
 }
-button:hover 
-{
-    background-color: #202020;
-}
 .recipe-shimmer-container
 {
     display: flex;
@@ -78,4 +74,9 @@ button:hover
     display: flex;
     flex-direction: column;
     gap: -20px;
+}
+.ingredients-h3
+{
+    display: flex;
+    justify-content: space-between;
 }
