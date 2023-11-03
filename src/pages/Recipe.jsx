@@ -101,8 +101,7 @@ const Recipe = () => {
                             </div>
                         </div>
                     }
-                    {
-                        active === 'ingredients' && (
+                    {active === 'ingredients' && (
                             details?.extendedIngredients.map((data) => (
                                 <div className="ingredient-bar" key={data?.id}>
                                     <h3 className='ingredients-h3'>
@@ -111,8 +110,7 @@ const Recipe = () => {
                                     </h3>
                                 </div>
                             ))
-                        )   
-                    }
+                    )}
                     {
                         active === 'steps' && (
                             <div className="steps">
