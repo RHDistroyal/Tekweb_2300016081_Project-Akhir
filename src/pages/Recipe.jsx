@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { API_KEY } from '../assets/API_KEY';
 import { Button, Skeleton } from '@mui/material';
 
-const Recipe = () => {
+const Recipe =()=>{
 
     const [details, setDetails] = useState();
     const [active, setActive] = useState('summary')
