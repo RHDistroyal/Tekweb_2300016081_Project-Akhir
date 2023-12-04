@@ -79,6 +79,8 @@ We welcome contributions from the open-source community. If you'd like to contri
 
 # License
 
-This project is open-source and available under the MIT License.
+This repository does not have a specific license©, so you are free to use the code in any way you like without any restrictions.
+
+If you have any questions or suggestions, feel free to open an issue in the repository.
 
 Happy cooking!
